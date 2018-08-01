@@ -1,6 +1,6 @@
 # Booklist :closed_book:
-- skeleton ui
-- es6
+:white_check_mark:skeleton ui
+:white_check_mark:es6
 ## Возможности
 * Добавлять книги
 * Удалять книги
