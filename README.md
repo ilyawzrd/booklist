@@ -1,4 +1,4 @@
-# Booklist
+# Booklist :closed_book:
 - skeleton ui
 - es6
 ## Возможности
