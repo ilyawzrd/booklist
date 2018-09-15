@@ -81,10 +81,10 @@ class Store {
   }
 }
 
-// DOM Load Event
+// DOM Load
 document.addEventListener('DOMContentLoaded', Store.displayBooks);
 
-// Event Listeners for adding a book
+// Добавить книгу
 document.getElementById('book-form').addEventListener('submit', function (e) {
   const title = document.getElementById('title').value,
     author = document.getElementById('author').value,
@@ -93,14 +93,13 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
   const book = new Book(title, author, publ);
 
   const ui = new UI();
-  //Validation
+  //Валидация
   if (title === '' || author === '' || publ === '') {
-    // Error alert
     ui.showAlert('Заполните все поля', 'error')
   }
   else {
     ui.addBookToList(book);
-    // Add to LS
+    // Добавить в LS
     Store.addBook(book);
     ui.showAlert('Книга добавлена!', 'success');
     ui.clearFields()
@@ -113,7 +112,7 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
 document.getElementById('book-list').addEventListener('click', function (e) {
   const ui = new UI();
   ui.deleteBook(e.target);
-  // Remove from LS
+  // Удалить из LS
   Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
   ui.showAlert('Книга удалена!', 'success')
   e.preventDefault();
